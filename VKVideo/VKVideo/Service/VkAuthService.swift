@@ -1,5 +1,5 @@
 //
-//  vkApiService.swift
+//  VkAuthService.swift
 //  VKVideo
 //
 //  Created by Maxim Zakopaylov on 29.04.2022.
@@ -7,13 +7,12 @@
 
 import AuthenticationServices
 
-class vkApiService: NSObject, ASWebAuthenticationPresentationContextProviding {
+class VkAuthService: NSObject, ASWebAuthenticationPresentationContextProviding {
     
- 
-    let vkAppId = "8153714"
-    let vkCredentional = ["video", "offline"]
-    let scheme = "vk8153714"
-    var callback: (String?, Error?) -> Void
+    private let vkAppId = "8153714"
+    private let vkCredentional = ["video", "offline"]
+    private let scheme = "vk8153714"
+    private var callback: (String?, Error?) -> Void
     
     init(_ result: @escaping (String?, Error?) -> Void) {
         self.callback = result
@@ -50,16 +49,19 @@ class vkApiService: NSObject, ASWebAuthenticationPresentationContextProviding {
         authenticationSession.prefersEphemeralWebBrowserSession = true
         authenticationSession.start()
     }
- 
+    
+    func presentationAnchor(for session: ASWebAuthenticationSession) -> ASPresentationAnchor {
+        return ASPresentationAnchor()
+    }
+    
+}
+
+extension VkAuthService {
+    
     private func processResponseURL(url: URL) {
         let uniformURlString = url.absoluteString.replacingOccurrences(of: "#", with: "?")
         let queryItems = URLComponents(string: uniformURlString)?.queryItems
         let token = queryItems?.first(where: {$0.name == "access_token"})?.value
         callback(token, nil)
     }
-    
-    func presentationAnchor(for session: ASWebAuthenticationSession) -> ASPresentationAnchor {
-        return ASPresentationAnchor()
-    }
-    
 }

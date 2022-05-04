@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		FC020044281C5A3800BFC24B /* vkApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC020043281C5A3800BFC24B /* vkApiService.swift */; };
+		FC020044281C5A3800BFC24B /* VkAuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC020043281C5A3800BFC24B /* VkAuthService.swift */; };
 		FC020046281C635100BFC24B /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC020045281C635100BFC24B /* AppState.swift */; };
 		FCA002B9281C0BEB0036EF39 /* VKVideoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA002B8281C0BEB0036EF39 /* VKVideoApp.swift */; };
 		FCA002BB281C0BEB0036EF39 /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA002BA281C0BEB0036EF39 /* AuthView.swift */; };
@@ -21,6 +21,10 @@
 		FCA002F8281C2EBE0036EF39 /* SplashViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA002F7281C2EBE0036EF39 /* SplashViewModel.swift */; };
 		FCA002FC281C3E580036EF39 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA002FA281C3E090036EF39 /* MainView.swift */; };
 		FCA002FD281C3E5A0036EF39 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA002FB281C3E090036EF39 /* MainViewModel.swift */; };
+		FCAC17D4282299EA00A1A64C /* NetworkDataFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCAC17D3282299EA00A1A64C /* NetworkDataFetcher.swift */; };
+		FCAC17D728229B2D00A1A64C /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCAC17D628229B2D00A1A64C /* Video.swift */; };
+		FCAC17D928229D4200A1A64C /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCAC17D828229D4200A1A64C /* NetworkService.swift */; };
+		FCAC17DD28229FFE00A1A64C /* DataFetcerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCAC17DC28229FFE00A1A64C /* DataFetcerService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,7 +45,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		FC020043281C5A3800BFC24B /* vkApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = vkApiService.swift; sourceTree = "<group>"; };
+		FC020043281C5A3800BFC24B /* VkAuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VkAuthService.swift; sourceTree = "<group>"; };
 		FC020045281C635100BFC24B /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		FC020047281C695400BFC24B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		FCA002B5281C0BEB0036EF39 /* VKVideo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VKVideo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -59,6 +63,10 @@
 		FCA002F7281C2EBE0036EF39 /* SplashViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewModel.swift; sourceTree = "<group>"; };
 		FCA002FA281C3E090036EF39 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		FCA002FB281C3E090036EF39 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		FCAC17D3282299EA00A1A64C /* NetworkDataFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDataFetcher.swift; sourceTree = "<group>"; };
+		FCAC17D628229B2D00A1A64C /* Video.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
+		FCAC17D828229D4200A1A64C /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		FCAC17DC28229FFE00A1A64C /* DataFetcerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataFetcerService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,14 +117,15 @@
 		FCA002B7281C0BEB0036EF39 /* VKVideo */ = {
 			isa = PBXGroup;
 			children = (
-				FC020047281C695400BFC24B /* Info.plist */,
 				FCA002FE281C59F90036EF39 /* Service */,
+				FCAC17D528229B1200A1A64C /* Models */,
 				FCA002F9281C3DED0036EF39 /* Main */,
 				FCA002E2281C0C550036EF39 /* Auth */,
 				FCA002F4281C2E900036EF39 /* Splash */,
 				FCA002B8281C0BEB0036EF39 /* VKVideoApp.swift */,
 				FC020045281C635100BFC24B /* AppState.swift */,
 				FCA002BC281C0BED0036EF39 /* Assets.xcassets */,
+				FC020047281C695400BFC24B /* Info.plist */,
 				FCA002BE281C0BED0036EF39 /* Preview Content */,
 			);
 			path = VKVideo;
@@ -177,9 +186,20 @@
 		FCA002FE281C59F90036EF39 /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				FC020043281C5A3800BFC24B /* vkApiService.swift */,
+				FC020043281C5A3800BFC24B /* VkAuthService.swift */,
+				FCAC17D828229D4200A1A64C /* NetworkService.swift */,
+				FCAC17D3282299EA00A1A64C /* NetworkDataFetcher.swift */,
+				FCAC17DC28229FFE00A1A64C /* DataFetcerService.swift */,
 			);
 			path = Service;
+			sourceTree = "<group>";
+		};
+		FCAC17D528229B1200A1A64C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				FCAC17D628229B2D00A1A64C /* Video.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -317,14 +337,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				FCA002FD281C3E5A0036EF39 /* MainViewModel.swift in Sources */,
-				FC020044281C5A3800BFC24B /* vkApiService.swift in Sources */,
+				FC020044281C5A3800BFC24B /* VkAuthService.swift in Sources */,
 				FCA002F8281C2EBE0036EF39 /* SplashViewModel.swift in Sources */,
 				FC020046281C635100BFC24B /* AppState.swift in Sources */,
 				FCA002FC281C3E580036EF39 /* MainView.swift in Sources */,
+				FCAC17D4282299EA00A1A64C /* NetworkDataFetcher.swift in Sources */,
 				FCA002BB281C0BEB0036EF39 /* AuthView.swift in Sources */,
+				FCAC17D728229B2D00A1A64C /* Video.swift in Sources */,
 				FCA002F6281C2E9B0036EF39 /* SplashView.swift in Sources */,
 				FCA002B9281C0BEB0036EF39 /* VKVideoApp.swift in Sources */,
+				FCAC17D928229D4200A1A64C /* NetworkService.swift in Sources */,
 				FCA002ED281C28C60036EF39 /* AuthViewModel.swift in Sources */,
+				FCAC17DD28229FFE00A1A64C /* DataFetcerService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

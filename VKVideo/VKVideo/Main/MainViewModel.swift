@@ -8,5 +8,15 @@
 import Foundation
 
 class MainViewModel: ObservableObject {
-   
+    
+    @Published var videos:[Video] = [Video]()
+    
+    private let dataFetcher = DataFetcerService()
+    
+    func fetchVideoBy(query q: String) {
+        dataFetcher.fetchVideos(q) { response in
+            guard let videos = response?.response.items else { return }
+            self.videos = videos
+        }
+    }
 }

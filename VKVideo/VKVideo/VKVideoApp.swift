@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import vk_ios_sdk
 
 @main
 struct VKVideoApp: App {
@@ -19,9 +18,6 @@ struct VKVideoApp: App {
                     .environmentObject(appState)
             case .Login: AuthView()
                     .environmentObject(appState)
-                    .onOpenURL { url in
-                        VKSdk.processOpen(url, fromApplication: nil)
-                    }
             case  .Main: MainView()
             }
             

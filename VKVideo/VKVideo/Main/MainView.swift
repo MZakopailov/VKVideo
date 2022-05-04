@@ -8,10 +8,23 @@
 import SwiftUI
 
 struct MainView: View {
+    @ObservedObject var viewModel = MainViewModel()
+    @State private var searchText = ""
+    
     var body: some View {
-        Button("Main VC") {
-            //TODO: load videos
+        NavigationView {
+            VStack {
+                List(viewModel.videos, id:\.id) { item in
+                        Text(item.title)
+                }
+            }
+            .navigationTitle("Videos")
+            .searchable(text: $searchText)
+            .onChange(of: searchText) { newValue in
+                self.viewModel.fetchVideoBy(query: newValue)
+            }
         }
+        .navigationViewStyle(.stack)
     }
 }
 

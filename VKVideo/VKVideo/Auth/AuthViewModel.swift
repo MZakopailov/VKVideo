@@ -6,16 +6,15 @@
 //
 
 import SwiftUI
-import vk_ios_sdk
 
 class AuthViewModel: ObservableObject {
     
     @Published var isLoggedSuccess: Bool = false
     
-    private var vkService: vkApiService?
+    private var vkAuthService: VkAuthService?
     
     func loginVK() {
-        vkService = vkApiService({ [weak self] token, error in
+        vkAuthService = VkAuthService({ [weak self] token, error in
             if let err = error {
                 self?.isLoggedSuccess = false
                 print(err.localizedDescription)
@@ -27,7 +26,7 @@ class AuthViewModel: ObservableObject {
             }
             self?.saveToken(t)
         })
-        vkService?.login()
+        vkAuthService?.login()
     }
     
     func saveToken(_ token: String) {
