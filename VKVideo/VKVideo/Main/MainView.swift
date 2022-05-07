@@ -15,7 +15,18 @@ struct MainView: View {
         NavigationView {
             VStack {
                 List(viewModel.videos, id:\.id) { item in
+                    HStack {
+                        let imageURL = URL(string: item.image.first?.url ?? "")
+                        AsyncImage(url: imageURL)
+                            .fixedSize()
                         Text(item.title)
+                        if let playerURL = URL(string: item.player ?? "") {
+                            NavigationLink("\(item.title)") {
+                                PlayerWebView(url: playerURL)
+                            }
+                        }
+
+                    }
                 }
             }
             .navigationTitle("Videos")
@@ -25,11 +36,5 @@ struct MainView: View {
             }
         }
         .navigationViewStyle(.stack)
-    }
-}
-
-struct MainView_Previews: PreviewProvider {
-    static var previews: some View {
-        MainView()
     }
 }

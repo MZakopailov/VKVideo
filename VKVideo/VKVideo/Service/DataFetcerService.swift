@@ -16,7 +16,7 @@ class DataFetcerService {
     }
     
     func fetchVideos(_ q: String, completion: @escaping(BaseResponse?) -> Void) {
-        let urlVideo = "https://api.vk.com/method/video.search?q=\(q)"
+        let urlVideo = "https://api.vk.com/method/video.search?q=\(q)&filters=mp4"
         self.networkDataFetcher.fetchAuthJSONData(urlString: urlVideo, response: completion)
     }
     
