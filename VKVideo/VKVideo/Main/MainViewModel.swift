@@ -10,13 +10,23 @@ import Foundation
 class MainViewModel: ObservableObject {
     
     @Published var videos:[Video] = [Video]()
+    @Published var isLoading = false
     
     private let dataFetcher = DataFetcerService()
     
+    private func normalizeResponse(_ response: BaseResponse?) {
+        isLoading = false
+        guard let videos = response?.response.items else { return }
+        self.videos = videos
+    }
+    
+    func fetchVideos() {
+        isLoading = true
+        dataFetcher.fetchOwnVideos({ self.normalizeResponse($0) })
+    }
+    
     func fetchVideoBy(query q: String) {
-        dataFetcher.fetchVideos(q) { response in
-            guard let videos = response?.response.items else { return }
-            self.videos = videos
-        }
+        isLoading = true
+        dataFetcher.searchVideos(q, completion: { self.normalizeResponse($0) })
     }
 }

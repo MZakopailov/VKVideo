@@ -14,7 +14,8 @@ enum AppStates {
 }
 
 struct AppStorageProperties {
-    static let Token = "VKToken"
+    static let Token    = "VKToken"
+    static let UserId   = "VKUserId"
 }
 
 class AppState: ObservableObject {

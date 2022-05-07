@@ -24,6 +24,7 @@
 		FCAC17DD28229FFE00A1A64C /* DataFetcerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCAC17DC28229FFE00A1A64C /* DataFetcerService.swift */; };
 		FCAC17E62826847E00A1A64C /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCAC17E52826847E00A1A64C /* PlayerView.swift */; };
 		FCAC17E82826854300A1A64C /* PlayerWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCAC17E72826854300A1A64C /* PlayerWebView.swift */; };
+		FCAC17EA2826E4A700A1A64C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCAC17E92826E4A700A1A64C /* User.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		FCAC17DC28229FFE00A1A64C /* DataFetcerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataFetcerService.swift; sourceTree = "<group>"; };
 		FCAC17E52826847E00A1A64C /* PlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
 		FCAC17E72826854300A1A64C /* PlayerWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerWebView.swift; sourceTree = "<group>"; };
+		FCAC17E92826E4A700A1A64C /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +141,7 @@
 		FCAC17D528229B1200A1A64C /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				FCAC17E92826E4A700A1A64C /* User.swift */,
 				FCAC17D628229B2D00A1A64C /* Video.swift */,
 			);
 			path = Models;
@@ -242,6 +245,7 @@
 				FC020044281C5A3800BFC24B /* VkAuthService.swift in Sources */,
 				FCA002F8281C2EBE0036EF39 /* SplashViewModel.swift in Sources */,
 				FC020046281C635100BFC24B /* AppState.swift in Sources */,
+				FCAC17EA2826E4A700A1A64C /* User.swift in Sources */,
 				FCA002FC281C3E580036EF39 /* MainView.swift in Sources */,
 				FCAC17D4282299EA00A1A64C /* NetworkDataFetcher.swift in Sources */,
 				FCAC17E82826854300A1A64C /* PlayerWebView.swift in Sources */,

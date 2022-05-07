@@ -24,7 +24,9 @@ class AuthViewModel: ObservableObject {
                 self?.isLoggedSuccess = false
                 return
             }
+            
             self?.saveToken(t)
+            self?.saveUserInfo()
         })
         vkAuthService?.login()
     }
@@ -33,6 +35,18 @@ class AuthViewModel: ObservableObject {
         UserDefaults.standard.set(token, forKey: AppStorageProperties.Token)
         self.isLoggedSuccess = true
     }
+    
+    func saveUserInfo() {
+        let dataService = DataFetcerService()
+        dataService.getProfileInfo { request in
+            if let request = request {
+                if let user = request.response.first {
+                    UserDefaults.standard.set(user.id, forKey: AppStorageProperties.UserId)
+                }
+            }
+        }
+    }
 }
+
 
 
